@@ -1,0 +1,19 @@
+.ps-list {
+    width: 200px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.ps-list-item {
+    border: 1px black solid;
+    border-radius: 1em;
+    padding: 5px;
+    margin: 1px;
+    cursor: pointer;
+    display: inline;
+}
+
+.ps-selected {
+    color: white;
+    background-color: black;
+}
