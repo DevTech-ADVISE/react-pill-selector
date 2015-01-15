@@ -1,7 +1,7 @@
 react-pill-selector
 ===================
 
-Pill Selector Description
+Pill Selector is a type of control that allows you to select one item at a time. For an example, see [this demo](http://yeahbuthats.github.io/react-pill-selector/).
 
 Usage
 -----
