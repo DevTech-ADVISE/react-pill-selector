@@ -1,3 +1,5 @@
+var React = require('react');
+
 /************* Helper Functions **************/
 function isElementType(element, expectedType) {
   return getElementType(element) == expectedType;
@@ -63,9 +65,13 @@ var PillSelector = React.createClass({
     var selected = this.state.selected === id ? null : id;
     this.setState({ selected: selected });
   },
-  itemClickHandler: function(id, data) {
+  itemClickHandler: function(event, id, data) {
     this.changeSelected(id);
     this.props.onItemClicked(id, data);
+
+    event.stopPropagation();
+    event.preventDefault();
+    return false;
   },
   render: function() {
     var children = this.props.children;
@@ -74,7 +80,7 @@ var PillSelector = React.createClass({
       var data = child.props.data;
       var className = id === this.state.selected ? "ps-list-item ps-selected" : "ps-list-item";
 
-      return <li className={className} onClick={this.itemClickHandler.bind(this, id, data)}>{child.props.children}</li>;
+      return <li className={className} onMouseDown={this.itemClickHandler.bind(this, event, id, data)}>{child.props.children}</li>;
     }, this);
 
     return (
