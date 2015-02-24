@@ -78,9 +78,10 @@ var PillSelector = React.createClass({
 
     var listItems = children.map(function (child, id) {
       var data = child.props.data;
-      var className = id === this.state.selected ? "ps-list-item ps-selected" : "ps-list-item";
+      var isSelected = id === this.state.selected;
+      var className = isSelected ? "ps-list-item ps-selected" : "ps-list-item";
 
-      return <li className={className} onMouseDown={this.itemClickHandler.bind(this, event, id, data)}>{child.props.children}</li>;
+      return <li role="button" aria-pressed={isSelected} className={className} onMouseDown={this.itemClickHandler.bind(this, event, id, data)}>{child.props.children}</li>;
     }, this);
 
     return (
