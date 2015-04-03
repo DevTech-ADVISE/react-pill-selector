@@ -4,8 +4,9 @@
   "description": "Pill button selector component using React and Webpack",
   "main": "pill-selector.jsx",
   "dependencies": {
-    "jsx-loader": "^0.12.2",
     "css-loader": "^0.9.0",
+    "jsx-loader": "^0.12.2",
+    "react": "^0.13.1",
     "style-loader": "^0.8.2"
   },
   "keywords": [
@@ -13,5 +14,18 @@
     "webpack",
     "pill",
     "jsx"
-  ]
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest-cli": "^0.4.0",
+    "react-tools": "^0.13.1"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
 }
