@@ -83,6 +83,7 @@ var PillSelector = React.createClass({
 
       return (
         <li
+          key={id}
           role="button"
           aria-pressed={isSelected}
           className={className}
