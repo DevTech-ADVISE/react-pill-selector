@@ -65,7 +65,7 @@ var PillSelector = React.createClass({
     var selected = this.state.selected === id ? null : id;
     this.setState({ selected: selected });
   },
-  itemClickHandler: function(event, id, data) {
+  itemClickHandler: function(id, data, event) {
     this.changeSelected(id);
     this.props.onItemClicked(id, data);
 
@@ -81,7 +81,18 @@ var PillSelector = React.createClass({
       var isSelected = id === this.state.selected;
       var className = isSelected ? "ps-list-item ps-selected" : "ps-list-item";
 
-      return <li role="button" aria-pressed={isSelected} className={className} onMouseDown={this.itemClickHandler.bind(this, event, id, data)}>{child.props.children}</li>;
+      return (
+        <li
+          key={id}
+          id={child.props.id}
+          ref={child.ref}
+          role="button"
+          aria-pressed={isSelected}
+          className={className}
+          onMouseDown={this.itemClickHandler.bind(this, id, data)}>
+          {child.props.children}
+        </li>
+      );
     }, this);
 
     return (
