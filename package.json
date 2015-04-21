@@ -1,6 +1,6 @@
 {
   "name": "react-pill-selector",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pill button selector component using React and Webpack",
   "main": "pill-selector.jsx",
   "dependencies": {
