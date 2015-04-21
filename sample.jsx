@@ -1,5 +1,4 @@
 var PillSelector = require("./pill-selector.jsx");
-require("./pill-selector.css");
 
 function reportChanged(id, data) {
     React.render(<p>{data}</p>, description);
