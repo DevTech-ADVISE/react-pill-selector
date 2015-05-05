@@ -1,5 +1,5 @@
 var React = require('react');
-require("./pill-selector.css");
+require("../styles/pill-selector.css");
 
 /************* Helper Functions **************/
 function isElementType(element, expectedType) {

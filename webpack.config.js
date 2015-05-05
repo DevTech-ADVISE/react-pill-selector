@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./sample.jsx",
+    entry: "./sample.js",
     output: {
         path: __dirname,
         filename: "bundle.js"
@@ -7,7 +7,7 @@ module.exports = {
     devtool: 'source-map',
     module: {
         loaders: [
-            { test: /\.jsx$/, loader: "jsx" },
+            { test: /\.js$/, loader: "jsx" },
             { test: /\.css$/, loader: "style!css" }
         ]
     },

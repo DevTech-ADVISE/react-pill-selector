@@ -16,7 +16,9 @@
     "jsx"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "install": "jsx src lib",
+    "build": "jsx src lib"
   },
   "devDependencies": {
     "jest-cli": "^0.4.0",
