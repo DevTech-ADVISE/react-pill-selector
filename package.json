@@ -1,6 +1,6 @@
 {
   "name": "react-pill-selector",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pill button selector component using React and Webpack",
   "main": "pill-selector.jsx",
   "dependencies": {
@@ -16,7 +16,9 @@
     "jsx"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "install": "jsx src lib",
+    "build": "jsx src lib"
   },
   "devDependencies": {
     "jest-cli": "^0.4.0",
