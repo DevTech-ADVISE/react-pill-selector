@@ -50,6 +50,12 @@ var PillSelector = React.createClass({
     this.props.onItemClicked(id, child.props.data);
   },
 
+  componentWillReceiveProps: function(newProps) {
+    if(this.props.selectedIndex !== newProps.selectedIndex) {
+      this.changeSelected(newProps.selectedIndex);
+    }
+  },
+
   getDefaultProps: function() {
     return {
       selectionMode: 1,
