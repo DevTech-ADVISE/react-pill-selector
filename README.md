@@ -1,5 +1,4 @@
-react-pill-selector
-===================
+# react-pill-selector [![Build Status](https://travis-ci.org/BI/react-pill-selector.png)](https://travis-ci.org/BI/react-pill-selector)
 
 Pill Selector is a type of control that allows you to select one item at a time. For an example, see [this demo](http://yeahbuthats.github.io/react-pill-selector/).
 
