@@ -1,8 +1,8 @@
-jest.dontMock('../pill-selector.jsx');
+jest.dontMock('../src/pill-selector.js');
 
 describe('PillSelector', function() {
   var React = require('react/addons');
-  var PillSelector = require('../pill-selector.jsx');
+  var PillSelector = require('../src/pill-selector.js');
   var TestUtils = React.addons.TestUtils;
 
   it('defaults to the first item selected', function() {
@@ -27,7 +27,7 @@ describe('PillSelector', function() {
       </PillSelector>
     );
     
-    var targetNode = React.findDOMNode(pills.refs.click);
+    var targetNode = pills.refs.click.getDOMNode();
     expect(targetNode.textContent).toEqual("Blueberry");
 
     TestUtils.Simulate.mouseDown(targetNode);
@@ -59,7 +59,7 @@ describe('PillSelector', function() {
     
     expect(data).toBe("a");
 
-    var targetNode = React.findDOMNode(pills.refs.click);
+    var targetNode = pills.refs.click.getDOMNode();
     TestUtils.Simulate.mouseDown(targetNode);
 
     expect(data).toBe("b");
@@ -95,7 +95,7 @@ describe('PillSelector', function() {
     var selected = TestUtils.findRenderedDOMComponentWithClass(pills, "ps-selected");
     expect(selected.getDOMNode().textContent).toEqual("Apricot");
 
-    var targetNode = React.findDOMNode(pills.refs.click);
+    var targetNode = pills.refs.click.getDOMNode();
     expect(targetNode.textContent).toEqual("Blueberry");
 
     TestUtils.Simulate.mouseDown(targetNode);
