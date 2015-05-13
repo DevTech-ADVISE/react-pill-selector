@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 require("../styles/pill-selector.css");
 
 /************* Helper Functions **************/
@@ -36,7 +37,8 @@ var PillSelector = React.createClass({
     selectionMode: React.PropTypes.number,
     selectedIndex: React.PropTypes.number,
     onItemClicked: React.PropTypes.func,
-    callClickOnLoad: React.PropTypes.bool
+    callClickOnLoad: React.PropTypes.bool,
+    isManaged: React.PropTypes.bool,
   },
 
   componentDidMount: function() {
@@ -61,15 +63,24 @@ var PillSelector = React.createClass({
       selectionMode: 1,
       selectedIndex: 0,
       onItemClicked: function () {},
-      callClickOnLoad: true
+      callClickOnLoad: true,
+      isManaged: false,
     };
   },
 
   getInitialState: function() {
+    if(this.props.isManaged) {
+      return {};
+    }
+
     return { selected: this.props.selectedIndex };
   },
 
   changeSelected: function(id) {
+    if(this.props.isManaged) {
+      return;
+    }
+
     if(this.props.selectionMode === PillSelector.ALWAYS_ONE) {
       this.setState({ selected: id });
       return;
@@ -85,7 +96,14 @@ var PillSelector = React.createClass({
 
     event.stopPropagation();
     event.preventDefault();
-    return false;
+  },
+
+  isSelectedIndex: function(id) {
+    if(this.props.isManaged) {
+      return id === this.props.selectedIndex;
+    }
+
+    return id === this.state.selected;
   },
 
   render: function() {
@@ -93,8 +111,18 @@ var PillSelector = React.createClass({
 
     var listItems = children.map(function (child, id) {
       var data = child.props.data;
-      var isSelected = id === this.state.selected;
-      var className = isSelected ? "ps-list-item ps-selected" : "ps-list-item";
+      var isSelected = this.isSelectedIndex(id);
+      var onMouseDown = this.itemClickHandler.bind(this, id, data);
+
+      // if(child.props.isDisabled) {
+      //   onMouseDown = function(){};
+      // }
+
+      var className = classNames(
+        "ps-list-item",
+        {"ps-selected": isSelected}, //, "ps-disabled": child.props.isDisabled},
+        child.props.className
+      );
 
       return (
         <li
@@ -104,7 +132,7 @@ var PillSelector = React.createClass({
           role="button"
           aria-pressed={isSelected}
           className={className}
-          onMouseDown={this.itemClickHandler.bind(this, id, data)}>
+          onMouseDown={onMouseDown}>
           {child.props.children}
         </li>
       );
