@@ -70,6 +70,16 @@ Properties
 * This determines if `onItemClicked` is called when the main component is loaded.
 * If set to false, manually clicking on a Pill will still change the selection.
 
+### isManaged ###
+
+**Type:** boolean  
+**Default:** false  
+**Example:** `<PillSelector isManaged={false}>`  
+**Required:** no
+
+* Controls whether the state of pill selector is tracked internally or extrernally.
+* If set to true, you can only change selected item with selectedIndex prop
+
 CSS Information
 ---------------
 
