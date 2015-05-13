@@ -1,4 +1,5 @@
 jest.dontMock('../src/pill-selector.js');
+jest.dontMock('classnames');
 
 describe('PillSelector', function() {
   var React = require('react/addons');
