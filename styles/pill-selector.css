@@ -1,7 +1,10 @@
 .ps-list {
-    width: 200px;
     list-style-type: none;
     padding: 0px;
+}
+
+.ps-list li {
+    display: inline;
 }
 
 .ps-list-item {
@@ -10,10 +13,17 @@
     padding: 5px;
     margin: 1px;
     cursor: pointer;
-    display: inline;
+}
+
+.ps-list-item:hover {
+    background-color: #DDD;
 }
 
 .ps-selected {
     color: white;
+    background-color: black;
+}
+
+.ps-selected:hover {
     background-color: black;
 }

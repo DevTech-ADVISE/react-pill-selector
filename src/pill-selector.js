@@ -125,15 +125,16 @@ var PillSelector = React.createClass({
       );
 
       return (
-        <li
-          key={id}
-          id={child.props.id}
-          ref={child.ref}
-          role="button"
-          aria-pressed={isSelected}
-          className={className}
-          onMouseDown={onMouseDown}>
-          {child.props.children}
+        <li key={id}>
+          <button
+            id={child.props.id}
+            ref={child.ref}
+            role="button"
+            aria-pressed={isSelected}
+            className={className}
+            onClick={onMouseDown}>
+            {child.props.children}
+          </button>
         </li>
       );
     }, this);
