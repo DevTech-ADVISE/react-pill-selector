@@ -31,13 +31,13 @@ describe('PillSelector', function() {
     var targetNode = pills.refs.click.getDOMNode();
     expect(targetNode.textContent).toEqual("Blueberry");
 
-    TestUtils.Simulate.mouseDown(targetNode);
+    TestUtils.Simulate.click(targetNode);
 
     var selected = TestUtils.findRenderedDOMComponentWithClass(pills, "ps-selected");
     expect(selected.getDOMNode().textContent).toEqual("Blueberry");
 
     //reclick and attempt to turn it off
-    TestUtils.Simulate.mouseDown(targetNode);
+    TestUtils.Simulate.click(targetNode);
 
     selected = TestUtils.findRenderedDOMComponentWithClass(pills, "ps-selected");
     expect(selected.getDOMNode().textContent).toEqual("Blueberry");
@@ -61,7 +61,7 @@ describe('PillSelector', function() {
     expect(data).toBe("a");
 
     var targetNode = pills.refs.click.getDOMNode();
-    TestUtils.Simulate.mouseDown(targetNode);
+    TestUtils.Simulate.click(targetNode);
 
     expect(data).toBe("b");
   });
@@ -99,13 +99,13 @@ describe('PillSelector', function() {
     var targetNode = pills.refs.click.getDOMNode();
     expect(targetNode.textContent).toEqual("Blueberry");
 
-    TestUtils.Simulate.mouseDown(targetNode);
+    TestUtils.Simulate.click(targetNode);
 
     selected = TestUtils.findRenderedDOMComponentWithClass(pills, "ps-selected");
     expect(selected.getDOMNode().textContent).toEqual("Blueberry");
 
     //reclick and attempt to turn it off
-    TestUtils.Simulate.mouseDown(targetNode);
+    TestUtils.Simulate.click(targetNode);
 
     selected = TestUtils.scryRenderedDOMComponentsWithClass(pills, "ps-selected");
     expect(selected.length).toBe(0);
