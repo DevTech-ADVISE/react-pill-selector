@@ -1,4 +1,6 @@
 .ps-list {
+    overflow:auto;
+    white-space: nowrap;
     list-style-type: none;
     padding: 0;
     margin: 0;
