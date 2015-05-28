@@ -19,8 +19,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "install": "jsx src lib",
-    "build": "jsx src lib"
+    "install": "./node_modules/react-tools/bin/jsx src lib",
+    "build": "./node_modules/react-tools/bin/jsx src lib"
   },
   "devDependencies": {
     "jest-cli": "^0.4.0"
