@@ -13,6 +13,12 @@ Pill Selector works similarly to an unordered list (in fact, it becomes one). As
         <li>Cranberry</li>
     </PillSelector>
 
+## Development
+
+* Development server `npm run dev`.
+* Continuously run tests on file changes `npm run watch-test`;
+* Run tests: `npm test`;
+* Build `npm run build`;
 
 Properties
 ----------

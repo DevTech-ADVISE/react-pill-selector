@@ -1,9 +1,6 @@
-jest.dontMock('../src/pill-selector.js');
-jest.dontMock('classnames');
-
 describe('PillSelector', function() {
   var React = require('react/addons');
-  var PillSelector = require('../src/pill-selector.js');
+  var PillSelector = require('../lib/react-pill-selector.jsx');
   var TestUtils = React.addons.TestUtils;
 
   it('defaults to the first item selected', function() {

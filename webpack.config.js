@@ -1,19 +1,35 @@
+/* jshint node: true */
+var path = require('path');
+
+
 module.exports = {
-    entry: "./sample.js",
-    output: {
-        path: __dirname,
-        filename: "bundle.js"
-    },
-    devtool: 'source-map',
-    module: {
-        loaders: [
-            { test: /\.js$/, loader: "jsx" },
-            { test: /\.css$/, loader: "style!css" }
-        ]
-    },
-    externals: {
-        //don't bundle the 'react' npm package with our bundle.js
-        //but get it from a global 'React' variable
-        'react': 'React'
-    }
+  context: path.join(__dirname),
+  entry: './example.js',
+
+  output: {
+    path: path.join(__dirname),
+    filename: 'react-pill-selector.js',
+    libraryTarget: 'umd',
+    library: 'ReactPillSelector'
+  },
+
+  module: {
+    loaders: [
+      {
+        test: /\.scss$/,
+        // Query parameters are passed to node-sass
+        loader: 'style!css!sass?outputStyle=expanded&' +
+          'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
+      },
+      {
+        test: /(\.js)|(\.jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          optional: ['runtime'],
+          stage: 0
+        }
+      }
+    ]
+  }
 };

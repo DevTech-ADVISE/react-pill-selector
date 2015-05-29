@@ -1,6 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
-require("../styles/pill-selector.css");
+require("./react-pill-selector.scss");
 
 /************* Helper Functions **************/
 function isElementType(element, expectedType) {
