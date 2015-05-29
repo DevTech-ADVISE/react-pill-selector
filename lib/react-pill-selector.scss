@@ -1,29 +1,45 @@
 .ps-list {
+    overflow:auto;
+    white-space: nowrap;
     list-style-type: none;
-    padding: 0px;
-}
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 
-.ps-list li {
-    display: inline;
-}
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
 
-.ps-list-item {
-    border: 1px black solid;
-    border-radius: 1em;
-    padding: 5px;
-    margin: 1px;
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
+}
+.ps-list > li {
+    display: inline-block;
+    margin:0 .2em;
+}
+.ps-list button {
+    color: rgba(120, 120, 120, 0.46);
+    text-shadow: 0px -1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid #ccc;
+    background-color: transparent;
+    font-size: 1em;
+    padding: 3px 7px;
     cursor: pointer;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-
-.ps-list-item:hover {
-    background-color: #DDD;
+.ps-list button:hover,
+.ps-list button:focus {
+    color: #222;
+    text-shadow: none;
+    background-color:#f9f9f9;
 }
-
-.ps-selected {
-    color: white;
-    background-color: black;
-}
-
-.ps-selected:hover {
-    background-color: black;
+.ps-list button.ps-selected {
+    color: #222;
+    background-color:#fff;
+    border-color:#333;
+    box-shadow:1px 1px 1px 0px rgba(0,0,0,.25);
 }

@@ -119,7 +119,6 @@ var PillSelector = React.createClass({
       // }
 
       var className = classNames(
-        "ps-list-item",
         {"ps-selected": isSelected}, //, "ps-disabled": child.props.isDisabled},
         child.props.className
       );
