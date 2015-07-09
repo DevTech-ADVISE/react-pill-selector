@@ -1,3 +1,4 @@
+var React = require('react');
 var PillSelector = require("./lib/index.js");
 
 function reportChanged(id, data) {
