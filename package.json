@@ -8,11 +8,13 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server --inline --hot"
   },
-  "main": "./lib/index.js",
+  "main": "./lib/react-pill-selector.js",
+  "style": "./dist/react-pill-selector.css.min",
   "dependencies": {
+    "babel-runtime": "~5.4.3",
     "classnames": "^2.1.1",
-    "react": "~0.13.0",
-    "babel-runtime": "~5.4.3"
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
   },
   "keywords": [
     "react",

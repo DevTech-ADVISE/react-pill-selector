@@ -1,11 +1,12 @@
 var React = require('react');
-var PillSelector = require("./lib/index.js");
+var ReactDOM = require('react-dom');
+var PillSelector = require("./src/react-pill-selector.js");
 
 function reportChanged(id, data) {
-    React.render(<p>{data}</p>, description);
+    ReactDOM.render(<p>{data}</p>, description);
 }
 
-React.render(
+ReactDOM.render(
   <PillSelector onItemClicked={reportChanged}>
     <li data="Prunus armeniaca">Apricot</li>
     <li data="Vaccinium corymbosum">Blueberry</li>
