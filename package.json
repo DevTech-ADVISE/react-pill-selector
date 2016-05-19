@@ -8,8 +8,7 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server --inline --hot"
   },
-  "main": "./lib/react-pill-selector.js",
-  "style": "./dist/react-pill-selector.css.min",
+  "main": "./dist/react-pill-selector.js",
   "dependencies": {
     "babel-runtime": "~5.4.3",
     "classnames": "^2.1.1",
