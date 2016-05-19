@@ -1,6 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
-require("./react-pill-selector.scss");
+require('./react-pill-selector.scss');
 
 /************* Helper Functions **************/
 function isElementType(element, expectedType) {
@@ -18,27 +18,27 @@ var PillSelector = React.createClass({
   },
 
   componentWillMount: function() {
-    var errors = "";
+    var errors = '';
     var children = this.props.children;
-    
+
     children.forEach(function(child) {
-      if(!isElementType(child, "li")) {
-        errors += "\r\nFound " + getElementType(child) + " element in PillSelector. All elements should be 'li'";
+      if(!isElementType(child, 'li')) {
+        errors += '\r\nFound ' + getElementType(child) + ' element in PillSelector. All elements should be "li"';
       }
     });
 
-    if(errors !== "") {
+    if(errors !== '') {
       throw new Error(errors);
     }
   },
 
   propTypes: {
-    children: React.PropTypes.arrayOf(React.PropTypes.element),
-    selectionMode: React.PropTypes.number,
-    selectedIndex: React.PropTypes.number,
-    onItemClicked: React.PropTypes.func,
     callClickOnLoad: React.PropTypes.bool,
+    children: React.PropTypes.arrayOf(React.PropTypes.element),
     isManaged: React.PropTypes.bool,
+    onItemClicked: React.PropTypes.func,
+    selectedIndex: React.PropTypes.number,
+    selectionMode: React.PropTypes.number
   },
 
   componentDidMount: function() {
@@ -119,7 +119,7 @@ var PillSelector = React.createClass({
       // }
 
       var className = classNames(
-        {"ps-selected": isSelected}, //, "ps-disabled": child.props.isDisabled},
+        {'ps-selected': isSelected}, //, 'ps-disabled': child.props.isDisabled},
         child.props.className
       );
 
@@ -128,7 +128,7 @@ var PillSelector = React.createClass({
           <button
             id={child.props.id}
             ref={child.ref}
-            role="button"
+            role='button'
             aria-pressed={isSelected}
             className={className}
             onClick={onMouseDown}>
@@ -139,7 +139,7 @@ var PillSelector = React.createClass({
     }, this);
 
     return (
-      <ul className="ps-list">
+      <ul className='ps-list'>
         {listItems}
       </ul>
     )
