@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "Pill button selector component using React and Webpack",
   "scripts": {
-    "test": "eslint src/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
-    "watch-test": "./node_modules/karma/bin/karma start karma.conf.js --auto-watch --no-single-run",
+    "test": "eslint src/ spec/ && karma start karma.conf.js",
+    "watch-test": "karma start karma.conf.js --auto-watch --no-single-run",
     "build": "webpack -p",
     "dev": "webpack-dev-server --inline --hot --config webpack.demo.config.js"
   },

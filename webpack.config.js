@@ -36,7 +36,7 @@ module.exports = {
       amd: 'react',
     },
     classnames: {
-      root: 'classnames',
+      root: 'classNames',
       commonjs: 'classnames',
       commonjs2: 'classnames',
       amd: 'classnames',

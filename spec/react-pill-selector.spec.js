@@ -1,7 +1,8 @@
+var React = require('react');
+var PillSelector = require('../src/react-pill-selector');
+var TestUtils = require('react-addons-test-utils');
+
 describe('PillSelector', function() {
-  var React = require('react');
-  var PillSelector = require('../dist/react-pill-selector.js');
-  var TestUtils = require('react-addons-test-utils');
 
   it('defaults to the first item selected', function() {
     var pills = TestUtils.renderIntoDocument(
