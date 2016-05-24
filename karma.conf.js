@@ -11,7 +11,7 @@ module.exports = function(config) {
       'node_modules/es5-shim/es5-shim.js',
 
       // React is an external dependency of the component
-      'node_modules/react/dist/react-with-addons.js',
+      'node_modules/react/dist/react.js',
 
       'spec/spec-helper.js',
       'spec/**/*.spec.*',
@@ -38,7 +38,7 @@ module.exports = function(config) {
   Loads configuration while ensuring sounce-map is enabled
  */
 function loadWebpackConfig () {
-  var webpackConfig = require('./webpack.config.js');
+  var webpackConfig = require('./webpack.demo.config.js');
   webpackConfig.devtool = 'inline-source-map';
   return webpackConfig;
 }
