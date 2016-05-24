@@ -1,6 +1,6 @@
 {
   "name": "react-pill-selector",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Pill button selector component using React and Webpack",
   "scripts": {
     "test": "eslint src/ spec/ && ./node_modules/karma/bin/karma start karma.conf.js",
