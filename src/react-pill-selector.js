@@ -1,4 +1,6 @@
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var classNames = require('classnames');
 require('./react-pill-selector.scss');
 
@@ -11,7 +13,7 @@ function getElementType(element) {
   return element.type.displayName || element.type;
 }
 
-var PillSelector = React.createClass({
+var PillSelector = createReactClass({
   statics: {
     ONE_OR_NONE: 0,
     ALWAYS_ONE: 1
@@ -33,12 +35,12 @@ var PillSelector = React.createClass({
   },
 
   propTypes: {
-    callClickOnLoad: React.PropTypes.bool,
-    children: React.PropTypes.arrayOf(React.PropTypes.element),
-    isManaged: React.PropTypes.bool,
-    onItemClicked: React.PropTypes.func,
-    selectedIndex: React.PropTypes.number,
-    selectionMode: React.PropTypes.number
+    callClickOnLoad: PropTypes.bool,
+    children: PropTypes.arrayOf(PropTypes.element),
+    isManaged: PropTypes.bool,
+    onItemClicked: PropTypes.func,
+    selectedIndex: PropTypes.number,
+    selectionMode: PropTypes.number
   },
 
   componentDidMount: function() {

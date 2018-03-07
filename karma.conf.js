@@ -13,6 +13,9 @@ module.exports = function(config) {
       // React is an external dependency of the component
       'node_modules/react/dist/react.js',
 
+      //Poly fill so we can use es6 maps etc from react
+      'node_modules/babel-polyfill/dist/polyfill.js',
+      
       'spec/spec-helper.js',
       'spec/**/*.spec.*',
       { pattern: 'src/**/*', watched: true, included: false }

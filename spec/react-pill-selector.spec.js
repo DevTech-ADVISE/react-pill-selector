@@ -1,6 +1,6 @@
 var React = require('react');
 var PillSelector = require('../src/react-pill-selector');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-dom/test-utils');
 
 describe('PillSelector', function() {
 
